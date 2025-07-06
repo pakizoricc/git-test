@@ -10,43 +10,70 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .my-contact-form {
+      width: 500px;
+      height: 500px;
+      margin: 70px auto;
+      padding: 20px;
+    }
+    .name-form {
+      display: flex;
+      align-items: center;
+    }
+    .name-form .name-2 {
+      margin-left: 10px;
+    }
+    .submit-btn {
+      text-align: center;
+    }
+    .submit-btn input {
+      width: 100%;
+    }
   </style>
 </head>
 <body>
-
-  Contact Us
-
-  First Name
-  This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="my-contact-form">
+    <h1>Contact Us</h1>
+    <form id="contactForm" method="post">
+      <div class="name-form">
+        <p class="name-1">
+          <label for="fname">First Name *</label>
+          <br>
+          <input type="text" id="fname" name="fname" required>
+        </p>
+        <p class="name-2">
+          <label for="lname">Last Name *</label>
+          <br>
+          <input type="text" id="lname" name="lname" required>
+        </p>
+      </div>
+      <p>
+        <label for="email">Email *</label>
+        <br>
+        <input type="text" id="email" name="email" required>
+      </p>
+      <p>
+        <label for="query_type">Query Type *</label>
+      </p>
+      <p>
+        <input type="checkbox" id="enquiry" name="query_type" value="enquiry" required>
+        <label for="enquiry">General Enquiry</label>
+        <input type="checkbox" id="request" name="query_type" value="request" required>
+        <label for="request">Support Request</label>
+      </p>
+      <p>
+        <label for="message">Message *</label>
+        <br>
+        <textarea name="message" id="message" name="message" required></textarea>
+      </p>
+      <p>
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">I consent to being contacted by the team *</label>
+      </p>
+      <div class="submit-btn">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
   </div>
 </body>
 </html>
