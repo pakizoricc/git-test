@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Contact form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    body {
+      background-color: hsl(148, 38%, 91%);
+    }
     .my-contact-form {
       width: 500px;
-      height: 500px;
+      height: 580px;
       margin: 70px auto;
       padding: 20px;
-    }
-    .name-form {
-      display: flex;
-      align-items: center;
-    }
-    .name-form .name-2 {
-      margin-left: 10px;
+      border-radius: 5%;
+      background-color: #fff;
     }
     .submit-btn {
       text-align: center;
@@ -29,42 +27,79 @@
     .submit-btn input {
       width: 100%;
     }
+    .form-control {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .checkbox-input {
+      margin: 0 auto;
+    }
+    .chkbox-input-1, 
+    .chkbox-input-2 {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      box-sizing: border-box;
+      background-color: white;
+      width: 218px;
+    }
+    .chkbox-input-2 {
+      margin-left: 24px;
+    }
+    p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .submit-btn input {
+      background-color: hsl(169, 82%, 27%);
+      border-radius: 6px;
+      border: none;
+      height: 38px;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
   <div class="my-contact-form">
     <h1>Contact Us</h1>
     <form id="contactForm" method="post">
-      <div class="name-form">
-        <p class="name-1">
+      <div class="row">
+        <div class="col-md-6">
           <label for="fname">First Name *</label>
           <br>
-          <input type="text" id="fname" name="fname" required>
-        </p>
-        <p class="name-2">
+          <input type="text" id="fname" name="fname" class="form-control" required>
+        </div>
+        <div class="col-md-6">
           <label for="lname">Last Name *</label>
           <br>
-          <input type="text" id="lname" name="lname" required>
-        </p>
+          <input type="text" id="lname" name="lname" class="form-control" required>
+        </div>
       </div>
       <p>
         <label for="email">Email *</label>
         <br>
-        <input type="text" id="email" name="email" required>
+        <input type="text" id="email" name="email" class="form-control" required>
       </p>
       <p>
         <label for="query_type">Query Type *</label>
       </p>
-      <p>
-        <input type="checkbox" id="enquiry" name="query_type" value="enquiry" required>
-        <label for="enquiry">General Enquiry</label>
-        <input type="checkbox" id="request" name="query_type" value="request" required>
-        <label for="request">Support Request</label>
-      </p>
+      <div class="row checkbox-input">
+        <div class="col-md-6 chkbox-input-1">
+          <input type="checkbox" id="enquiry" name="query_type" value="enquiry" required>
+          <label for="enquiry" class="chkbox">General Enquiry</label>
+        </div>
+        <div class="col-md-6 chkbox-input-2">
+          <input type="checkbox" id="request" name="query_type" value="request" required>
+          <label for="request" class="chkbox">Support Request</label>
+        </div>
+      </div>
       <p>
         <label for="message">Message *</label>
         <br>
-        <textarea name="message" id="message" name="message" required></textarea>
+        <textarea name="message" id="message" name="message" class="form-control" required></textarea>
       </p>
       <p>
         <input type="checkbox" id="consent" name="consent" required>
