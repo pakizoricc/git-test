@@ -33,7 +33,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     emailError.style.display = 'none';
   }
 
-  // Query Type (barem jedan čekiran)
+  // Query Type
   const queryCheckboxes = document.querySelectorAll('input[name="query_type"]:checked');
   const queryError = document.getElementById('query-error');
   if (queryCheckboxes.length === 0) {
@@ -63,9 +63,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     consentError.style.display = 'none';
   }
 
-  // Ako nema grešaka
   if (!hasError) {
     alert("Form submitted successfully!");
-    // this.submit(); // ako želiš da se zaista pošalje
   }
 });
