@@ -63,7 +63,38 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     consentError.style.display = 'none';
   }
 
-  if (!hasError) {
+  /*if (!hasError) {
     alert("Form submitted successfully!");
+  }*/
+
+  // for fields that are empty -> red border of input
+  const empty_inputs = document.querySelectorAll('input');
+  for (const empty_input of empty_inputs) {
+    if (!empty_input.value) {
+      empty_input.classList.add('input-error');
+    }
   }
+
+  // when the message is empty
+  const empty_message = document.querySelector('textarea');
+  if (!empty_message.value) {
+      empty_message.classList.add('input-error');
+  }
+  
+  const popup = document.querySelector('.container');
+
+  if (!hasError) {
+    popup.classList.add('show-popup');
+
+    document.getElementById('contactForm').reset();
+    const allInputs = document.querySelectorAll('input, textarea');
+    allInputs.forEach(input => input.classList.remove('input-error'));
+
+    setTimeout(() => {
+      popup.classList.remove('show-popup');
+    }, 3500);
+    } else {
+      popup.classList.remove('show-popup');
+  }
+
 });
