@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
   <title>Frontend Mentor | Contact form</title>
 
@@ -69,6 +68,27 @@
       background-color: white;
       width: 218px;
       margin-top: 10px;
+      position: relative;
+    }
+    .chkbox-option .svg-radio-1 img {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 13px;
+      height: 13px;
+      display: none;
+    }
+    .chkbox-option .svg-radio-2 img {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 13px;
+      height: 13px;
+      display: none;
+    }
+    #enquiry:checked ~ .svg-radio-1 img,
+    #request:checked ~ .svg-radio-2 img {
+      display: block;
     }
     .consent-input label {
       margin-left: 10px;
@@ -152,10 +172,16 @@
         <div class="chkbox-input">
           <div class="chkbox-option">
             <input type="radio" id="enquiry" name="query_type" value="enquiry" />
+            <div class="svg-radio-1">
+              <img src="assets/images/icon-radio-selected.svg" alt="Selected option">
+            </div>
             <label for="enquiry">General Enquiry</label>
           </div>
           <div class="chkbox-option">
             <input type="radio" id="request" name="query_type" value="request" />
+            <div class="svg-radio-2">
+              <img src="assets/images/icon-radio-selected.svg" alt="Selected option">
+            </div>
             <label for="request">Support Request</label>
           </div>
         </div>
