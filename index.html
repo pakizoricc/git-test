@@ -38,8 +38,11 @@
     .my-contact-form .star {
       color: #0c7d69ff;
     }
-    input:not([type='radio']), textarea {
+    textarea {
       margin-top: 5px;
+    }
+    input:not([type='radio']) {
+      margin-top: 1px;
     }
     .submit-btn input {
       width: 100%;
@@ -86,12 +89,25 @@
       height: 13px;
       display: none;
     }
-    #enquiry:checked ~ .svg-radio-1 img,
-    #request:checked ~ .svg-radio-2 img {
-      display: block;
+    .consent-input {
+      display: flex;
+      position: relative;
     }
     .consent-input label {
       margin-left: 10px;
+    }
+    .consent-input .consent-svg img {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      top: 6px;
+      left: 0;
+      display: none;
+    }
+    #enquiry:checked ~ .svg-radio-1 img,
+    #request:checked ~ .svg-radio-2 img, 
+    #consent:checked ~ .consent-svg img {
+      display: block;
     }
     .input-error {
       border: 1px solid #FF0000;
@@ -196,6 +212,9 @@
 
       <div class="mt-3 consent-input">
         <input type="checkbox" id="consent" name="consent" />
+        <div class="consent-svg">
+          <img src="assets/images/icon-checkbox-check.svg" alt="Checked checkbox">
+        </div>
         <label for="consent">I consent to being contacted by the team <span class='star'>*</span></label>
         <p id="consent-error" class="error-msg">To submit this form, please consent to being contacted.</p>
       </div>
